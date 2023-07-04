@@ -9,6 +9,6 @@ edition = "2018"
 [dependencies]
 tokio = { version = "0.2.23", features = ["full", "tracing"] }
 futures = "0.3"
-bluster = { git = "https://github.com/dfrankland/bluster" }
+bluster = { git = "https://github.com/dfrankland/bluster", rev = "ffba9e258561d5d2e70a81f805c694456ca11dd1" }
 uuid = "0.8.1"
 pretty_env_logger = "0.2"

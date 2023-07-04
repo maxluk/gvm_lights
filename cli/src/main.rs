@@ -1,5 +1,6 @@
 use clap::{Arg, App};
-use gvm_lights::{GvmClient, ControlMessage, LightCmd};
+use gvm_lights::{GvmClient, ControlMessage};
+use gvm_lights::codec::LightCmd;
 use std::str::FromStr;
 
 #[async_std::main]
@@ -59,6 +60,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let client = GvmClient::new("192.168.4.2").await?;
     
     let sent_bytes = client.send_to(&"192.168.4.1", &cmd).await?;
-    println!("{}", sent_bytes);
+    println!("{:?}", sent_bytes);
     Ok(())
 }
